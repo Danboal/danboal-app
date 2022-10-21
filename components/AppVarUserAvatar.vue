@@ -21,8 +21,8 @@
             <v-list-item-content class="justify-center">
                 <div class="mx-auto text-center">
                     <v-avatar color="teal" size="48" class="mx-auto">
-                        <v-img v-if="user.photoURL" :src="user.photoURL"></v-img>
-                        <span v-else-if="!user.photoURL" class="white--text text-h5">{{user.displayName}}</span>
+                        <v-img v-if="user.photoURL != null" :src="user.photoURL"></v-img>
+                        <span v-else class="white--text text-h5">{{user.displayName}}</span>
                     </v-avatar>
                     <h3>{{ user.displayName }}</h3>
                     <p class="text-caption mt-1"> {{ user.email }}</p>
@@ -59,6 +59,9 @@ export default {
     }
   },
   beforeDestroy() {
+  },
+  created(){
+    this.user = this.$store.state.authUser
   },
   mounted(){
   },

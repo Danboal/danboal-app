@@ -62,7 +62,8 @@ export default {
           onAuthStateChangedAction: 'onAuthStateChanged',
         },
         ssr: true
-      }
+      },
+      database: true
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
