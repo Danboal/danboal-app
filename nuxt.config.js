@@ -56,7 +56,13 @@ export default {
       measurementId: "G-WB7RK6GPJL"
     },
     services: {
-      auth: true // Just as example. Can be any other service.
+      auth: {
+        persistence: 'local',
+        initialize: {
+          onAuthStateChangedAction: 'onAuthStateChanged',
+        },
+        ssr: true
+      }
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -64,7 +70,6 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
   },
-
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],

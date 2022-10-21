@@ -3,7 +3,6 @@
     <v-app-bar fixed app class="white--text">
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <AppVarUserAvatar ref="AppVarUserAvatar" />
     </v-app-bar>
     <v-main>
       <v-container fluid class="pa-0 ma-0">
@@ -23,15 +22,13 @@ html {
 }
 </style>
 <script>
-import AppVarUserAvatar from "../components/AppVarUserAvatar.vue";
 export default {
   name: "DefaultLayout",
   components: {
-    AppVarUserAvatar,
   },
   data() {
     return {
-      title:"Danboal",
+      title:"Danboal"
     };
   },
   computed: {
